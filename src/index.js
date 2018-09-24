@@ -23,14 +23,12 @@ class Sorter {
   sort(indices) {
     let arrayToSort = []
 
-    indices.sort();
-    indices.forEach(i => arrayToSort.push(this.array[i]));
+    indices.sort()
+    indices.forEach(i => arrayToSort.push(this.array[i]))
 
-    arrayToSort.sort(this.compareFunction);
+    arrayToSort.sort(this.compareFunction)
 
-    for (let i = 0; i < arrayToSort.length; i++) {
-      this.array.splice(indices[i], 1, arrayToSort[i])
-    }
+    indices.forEach((ind, i) => this.array.splice(ind, 1, arrayToSort[i]))
   }
 
   setComparator(compareFunction) {
